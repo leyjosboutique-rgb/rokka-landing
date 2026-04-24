@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ROKKA Joyería | Oro Laminado Premium</title>
+  <meta name="description" content="Joyería en oro laminado premium. Envío gratis a Colombia y pago contraentrega. Brilla como oro real sin pagar precios absurdos." />
+
+  <!-- META PIXEL -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1321863029862807');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1321863029862807&ev=PageView&noscript=1"/></noscript>
+
+  <style>
+    :root {
+      --bg: #050505;
+      --bg-soft: #0d0d0d;
+      --card: #121212;
+      --gold: #d6a84f;
+      --gold-light: #f4d58d;
+      --cream: #f7efe0;
+      --text: #ffffff;
+      --muted: #b9b1a5;
+      --green: #25d366;
+      --danger: #ffcf69;
+      --border: rgba(214, 168, 79, 0.28);
+      --shadow: 0 25px 70px rgba(0,0,0,.55);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: radial-gradient(circle at 50% 0%, #1a1308 0%, #050505 45%, #000 100%);
+      color: var(--text);
+      line-height: 1.45;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+
+    .announcement {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: linear-gradient(90deg, #9b6a20, #f3d38b, #9b6a20);
+      color: #080808;
+      text-align: center;
+      font-weight: 800;
+      font-size: 13px;
+      letter-spacing: .3px;
+      padding: 10px 12px;
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 34px 0 42px;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 78% 20%, rgba(214,168,79,.22), transparent 34%),
+        radial-gradient(circle at 18% 40%, rgba(255,255,255,.07), transparent 25%);
+      pointer-events: none;
+    }
+
+    .nav {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 34px;
+    }
+
+    .logo {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 24px;
+      letter-spacing: 4px;
+      font-weight: 700;
+      color: var(--gold-light);
+    }
+
+    .nav-badges {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .mini-badge {
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.04);
+      color: var(--cream);
+      padding: 8px 11px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: var(--gold-light);
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(40px, 7vw, 76px);
+      line-height: .94;
+      margin-bottom: 18px;
+      letter-spacing: -1.5px;
+    }
+
+    .gold-text {
+      background: linear-gradient(90deg, #fff6dc, #d6a84f, #fff1c6);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-sub {
+      font-size: clamp(17px, 2.2vw, 22px);
+      color: var(--cream);
+      max-width: 620px;
+      margin-bottom: 22px;
+    }
+
+    .benefit-list {
+      display: grid;
+      gap: 10px;
+      margin: 24px 0;
+    }
+
+    .benefit-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: #f3ead8;
+      font-size: 16px;
+    }
+
+    .check {
+      width: 24px;
+      height: 24px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(214,168,79,.18);
+      border: 1px solid var(--border);
+      color: var(--gold-light);
+      font-weight: 900;
+      flex: 0 0 auto;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      align-items: center;
+      margin: 26px 0 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 9px;
+      min-height: 56px;
+      padding: 15px 22px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 900;
+      letter-spacing: .2px;
+      border: 0;
+      cursor: pointer;
+      transition: transform .18s ease, box-shadow .18s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #fff0bb, #d6a84f 45%, #956316);
+      color: #090909;
+      box-shadow: 0 14px 35px rgba(214,168,79,.28);
+    }
+
+    .btn-whatsapp {
+      background: var(--green);
+      color: #06140a;
+      box-shadow: 0 14px 35px rgba(37,211,102,.22);
+    }
+
+    .trust-line {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .hero-card {
+      position: relative;
+      border-radius: 34px;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.02));
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      min-height: 560px;
+    }
+
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: .88;
+    }
+
+    .image-placeholder {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      padding: 28px;
+      text-align: center;
+      background:
+        linear-gradient(rgba(0,0,0,.22), rgba(0,0,0,.76)),
+        radial-gradient(circle at 50% 24%, rgba(214,168,79,.38), transparent 35%),
+        linear-gradient(135deg, #1a1a1a, #050505);
+    }
+
+    .placeholder-box {
+      border: 1px dashed rgba(244,213,141,.55);
+      border-radius: 24px;
+      padding: 28px;
+      color: var(--cream);
+      background: rgba(0,0,0,.25);
+    }
+
+    .floating-offer {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+      background: rgba(0,0,0,.72);
+      border: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+      border-radius: 22px;
+      padding: 18px;
+    }
+
+    .offer-title {
+      color: var(--gold-light);
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .metric {
+      background: rgba(255,255,255,.045);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 18px;
+      padding: 14px;
+      text-align: center;
+    }
+
+    .metric strong {
+      display: block;
+      color: var(--gold-light);
+      font-size: 20px;
+      margin-bottom: 3px;
+    }
+
+    section { padding: 64px 0; }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 34px;
+    }
+
+    .section-title h2 {
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: clamp(30px, 4.5vw, 48px);
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: var(--muted);
+      max-width: 680px;
+      margin: 0 auto;
+      font-size: 17px;
+    }
+
+    .pain-grid, .feature-grid, .review-grid, .product-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .pain-grid { grid-template-columns: repeat(3, 1fr); }
+    .feature-grid { grid-template-columns: repeat(4, 1fr); }
+    .review-grid { grid-template-columns: repeat(3, 1fr); }
+    .product-grid { grid-template-columns: repeat(3, 1fr); }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.025));
+      border: 1px solid rgba(255,255,255,.09);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: 0 14px 45px rgba(0,0,0,.22);
+    }
+
+    .card h3 {
+      color: var(--cream);
+      margin-bottom: 8px;
+      font-size: 19px;
+    }
+
+    .card p {
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    .icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 14px;
+      color: #090909;
+      background: linear-gradient(135deg, #fff0bb, #d6a84f);
+      font-size: 23px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .visual-panel {
+      min-height: 460px;
+      border-radius: 32px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      background:
+        linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.62)),
+        radial-gradient(circle at 50% 30%, rgba(214,168,79,.34), transparent 36%),
+        #111;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+      text-align: center;
+      color: var(--cream);
+    }
+
+    .visual-panel img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 32px;
+    }
+
+    .dark-band {
+      background: linear-gradient(180deg, rgba(214,168,79,.06), rgba(255,255,255,.02));
+      border-top: 1px solid rgba(214,168,79,.14);
+      border-bottom: 1px solid rgba(214,168,79,.14);
+    }
+
+    .product-card {
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .product-img {
+      aspect-ratio: 1 / 1;
+      background:
+        radial-gradient(circle at 50% 35%, rgba(214,168,79,.32), transparent 33%),
+        linear-gradient(135deg, #1a1a1a, #070707);
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      overflow: hidden;
+    }
+
+    .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-body { padding: 20px; }
+
+    .price {
+      display: flex;
+      gap: 10px;
+      align-items: baseline;
+      margin: 12px 0;
+    }
+
+    .price strong {
+      color: var(--gold-light);
+      font-size: 23px;
+    }
+
+    .price span {
+      color: var(--muted);
+      text-decoration: line-through;
+    }
+
+    .pill {
+      display: inline-flex;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 7px 10px;
+      color: var(--gold-light);
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .review-card .stars {
+      color: var(--gold-light);
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+    }
+
+    .review-name {
+      color: var(--cream);
+      font-weight: 900;
+      margin-top: 14px;
+    }
+
+    .faq {
+      max-width: 860px;
+      margin: 0 auto;
+      display: grid;
+      gap: 12px;
+    }
+
+    details {
+      background: rgba(255,255,255,.045);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: 18px;
+      padding: 18px 20px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 900;
+      color: var(--cream);
+    }
+
+    details p {
+      color: var(--muted);
+      margin: 12px 0 0;
+    }
+
+    .final-cta {
+      text-align: center;
+      padding: 74px 0 94px;
+    }
+
+    .final-box {
+      border: 1px solid var(--border);
+      border-radius: 34px;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(214,168,79,.22), transparent 36%),
+        linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+      padding: 42px 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .sticky-cta {
+      position: fixed;
+      z-index: 70;
+      left: 12px;
+      right: 12px;
+      bottom: 12px;
+      display: none;
+      gap: 10px;
+      background: rgba(0,0,0,.74);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 999px;
+      padding: 9px;
+      box-shadow: 0 20px 45px rgba(0,0,0,.45);
+    }
+
+    .sticky-cta .btn {
+      flex: 1;
+      min-height: 48px;
+      padding: 12px 14px;
+      font-size: 13px;
+    }
+
+    footer {
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+      padding: 28px 16px 100px;
+      border-top: 1px solid rgba(255,255,255,.08);
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid, .split { grid-template-columns: 1fr; }
+      .hero-card { min-height: 430px; }
+      .pain-grid, .feature-grid, .review-grid, .product-grid { grid-template-columns: 1fr 1fr; }
+      .metrics { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 620px) {
+      .wrap { width: min(100% - 24px, 1120px); }
+      .nav { align-items: flex-start; }
+      .nav-badges { display: none; }
+      .hero { padding-top: 24px; }
+      .pain-grid, .feature-grid, .review-grid, .product-grid { grid-template-columns: 1fr; }
+      .cta-row .btn { width: 100%; }
+      .hero-card { min-height: 380px; }
+      section { padding: 48px 0; }
+      .sticky-cta { display: flex; }
+      h1 { letter-spacing: -1px; }
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    const WHATSAPP_NUMBER = "573229484031";
+    const SHOPIFY_URL = "https://rokkajoyeria.com/collections/all";
+
+    function whatsappLink(product = "") {
+      const text = product
+        ? `Hola, quiero ordenar ${product} de ROKKA Joyería con envío gratis y pago contraentrega.`
+        : "Hola, quiero ordenar una joya ROKKA con envío gratis y pago contraentrega.";
+      return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+    }
+
+    function trackEvent(name) {
+      if (typeof fbq !== "undefined") fbq("trackCustom", name);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll("[data-whatsapp]").forEach(el => {
+        const product = el.getAttribute("data-product") || "";
+        el.href = whatsappLink(product);
+        el.addEventListener("click", () => trackEvent("WhatsAppClick"));
+      });
+      document.querySelectorAll("[data-shopify]").forEach(el => {
+        el.href = SHOPIFY_URL;
+        el.addEventListener("click", () => trackEvent("ShopifyClick"));
+      });
+
+      // Mostrar sticky CTA al hacer scroll
+      window.addEventListener("scroll", () => {
+        const sticky = document.querySelector(".sticky-cta");
+        if (window.scrollY > 400) sticky.style.display = "flex";
+        else sticky.style.display = "none";
+      });
+    });
+  </script>
+
+  <div class="announcement">🚚 Envío GRATIS a toda Colombia · 💰 Pago contraentrega · 🔥 Oferta de lanzamiento activa</div>
+
+  <header class="hero">
+    <div class="wrap">
+      <nav class="nav">
+        <div class="logo">ROKKA</div>
+        <div class="nav-badges">
+          <div class="mini-badge">Oro laminado 18K</div>
+          <div class="mini-badge">Pagas al recibir</div>
+          <div class="mini-badge">Atención por WhatsApp</div>
+        </div>
+      </nav>
+
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">Joyería premium para uso diario</div>
+          <h1>Brilla como <span class="gold-text">oro real</span> sin pagar precios absurdos</h1>
+          <p class="hero-sub">Cadenas, pulseras y combos en oro laminado 18K. Presencia de lujo, brillo intenso y diseño hecho para destacar — sin arruinarte.</p>
+
+          <div class="benefit-list">
+            <div class="benefit-item"><span class="check">✓</span> No se pone negro. No pierde brillo. Resiste agua y uso diario.</div>
+            <div class="benefit-item"><span class="check">✓</span> Acabado idéntico al oro 18K con blindaje de alta durabilidad</div>
+            <div class="benefit-item"><span class="check">✓</span> Envío gratis a toda Colombia — pagas cuando recibes en tu puerta</div>
+          </div>
+
+          <div class="cta-row">
+            <a class="btn btn-whatsapp" data-whatsapp href="#">📲 Ordenar por WhatsApp</a>
+            <a class="btn btn-gold" href="#productos">Ver colección</a>
+          </div>
+          <p class="trust-line">✅ Confirmamos tu pedido por WhatsApp antes del envío. Sin riesgo.</p>
+
+          <div class="metrics">
+            <div class="metric"><strong>18K</strong><span>apariencia premium</span></div>
+            <div class="metric"><strong>COD</strong><span>pagas al recibir</span></div>
+            <div class="metric"><strong>🇨🇴</strong><span>envío nacional</span></div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <!-- REEMPLAZA: sube tu mejor foto de cadena aquí -->
+          <!-- <img class="hero-image" src="TU_FOTO_AQUI.jpg" alt="Cadena oro laminado ROKKA" /> -->
+          <div class="image-placeholder">
+            <div class="placeholder-box">
+              <strong>📸 FOTO HERO</strong><br><br>
+              Hombre usando cadena corona, fondo negro, luz dorada lateral. Joya nítida y brillante.
+            </div>
+          </div>
+          <div class="floating-offer">
+            <div class="offer-title">🔥 Oferta de lanzamiento</div>
+            <div>Envío gratis + pago al recibir + atención directa por WhatsApp</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- OBJECIONES -->
+  <section class="dark-band">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Sabemos lo que estás pensando…</h2>
+        <p>Y tenemos respuesta para cada duda antes de que se vaya.</p>
+      </div>
+
+      <div class="pain-grid">
+        <div class="card">
+          <div class="icon">✕</div>
+          <h3>"Seguro se pone negro"</h3>
+          <p>ROKKA usa blindaje de alta durabilidad. Con cuidados básicos mantiene su brillo por mucho más tiempo que el promedio del mercado.</p>
+        </div>
+        <div class="card">
+          <div class="icon">✕</div>
+          <h3>"Se va a ver barato"</h3>
+          <p>El acabado y el peso visual hacen que cada pieza se vea elegante desde el primer uso. La gente pregunta dónde la compraste.</p>
+        </div>
+        <div class="card">
+          <div class="icon">✕</div>
+          <h3>"¿Y si no llega?"</h3>
+          <p>Confirmamos tu pedido por WhatsApp y pagas solo cuando el domiciliario toca tu puerta. Cero riesgo para ti.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BENEFICIO EMOCIONAL -->
+  <section>
+    <div class="wrap split">
+      <div class="visual-panel">
+        <!-- REEMPLAZA: foto lifestyle mujer/hombre usando joya ROKKA -->
+        <div>
+          <strong>📸 FOTO LIFESTYLE</strong><br><br>
+          Persona usando cadena o pulsera ROKKA. Enfoque en la joya, estilo premium, fondo limpio.
+        </div>
+      </div>
+      <div>
+        <div class="eyebrow">Poder que no necesita voz</div>
+        <h2 class="gold-text" style="font-family: Georgia, 'Times New Roman', serif; font-size: clamp(32px, 4.5vw, 52px); line-height:1;">No es solo una joya. Es presencia.</h2>
+        <p style="color: var(--cream); font-size: 19px;">Cuando una pieza se ve bien, cambia cómo te perciben y cómo te sientes. ROKKA está diseñada para ese efecto: más estilo, más seguridad, más impacto — de forma inmediata.</p>
+        <div class="benefit-list">
+          <div class="benefit-item"><span class="check">✓</span> Más presencia en fotos y en persona</div>
+          <div class="benefit-item"><span class="check">✓</span> Combina con looks casuales y elegantes</div>
+          <div class="benefit-item"><span class="check">✓</span> Ideal para regalo, uso diario o elevar tu outfit</div>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-whatsapp" data-whatsapp href="#">📲 Quiero la mía</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- POR QUÉ ROKKA -->
+  <section class="dark-band">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>¿Por qué elegir ROKKA?</h2>
+        <p>La compra debe sentirse fácil, segura y deseable desde el primer clic.</p>
+      </div>
+
+      <div class="feature-grid">
+        <div class="card"><div class="icon">💎</div><h3>Oro laminado 18K</h3><p>Acabado premium tipo oro real con brillo elegante que dura.</p></div>
+        <div class="card"><div class="icon">🛡️</div><h3>Resistente</h3><p>Resiste agua, sudor y uso diario. No mancha, no oxida, no se pela.</p></div>
+        <div class="card"><div class="icon">🚚</div><h3>Envío gratis</h3><p>Despachamos a toda Colombia. Sin costo adicional para ti.</p></div>
+        <div class="card"><div class="icon">💰</div><h3>Pagas al recibir</h3><p>Contraentrega 100% seguro. Recibes primero, pagas después.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTOS -->
+  <section id="productos">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Elige tu estilo</h2>
+        <p>Los productos más deseados de ROKKA. Cada uno con envío gratis y pago contraentrega.</p>
+      </div>
+
+      <div class="product-grid">
+        <article class="card product-card">
+          <div class="product-img">
+            <!-- <img src="TU_FOTO_CADENA_CUBANA.jpg" alt="Cadena Cubana + Dije Corona ROKKA" /> -->
+            📸 Cadena Cubana + Dije Corona
+          </div>
+          <div class="product-body">
+            <span class="pill">⭐ Más vendida</span>
+            <h3>Cadena Cubana + Dije Corona</h3>
+            <p>Oro laminado 18K. Brillo intenso, cierre de seguridad, resistente al agua.</p>
+            <div class="price"><strong>$149.900</strong><span>$250.000</span></div>
+            <a class="btn btn-whatsapp" data-whatsapp data-product="Cadena Cubana + Dije Corona" href="#" style="width:100%;">📲 Ordenar esta pieza</a>
+          </div>
+        </article>
+
+        <article class="card product-card">
+          <div class="product-img">
+            <!-- <img src="TU_FOTO_COMBO.jpg" alt="Combo Cadena + Pulsera ROKKA" /> -->
+            📸 Combo Cadena + Pulsera
+          </div>
+          <div class="product-body">
+            <span class="pill">🔥 Mejor valor</span>
+            <h3>Combo Cadena + Pulsera</h3>
+            <p>El look completo. Cadena y pulsera coordinadas en oro laminado premium.</p>
+            <div class="price"><strong>$169.900</strong><span>$350.000</span></div>
+            <a class="btn btn-whatsapp" data-whatsapp data-product="Combo Cadena + Pulsera" href="#" style="width:100%;">📲 Ordenar combo</a>
+          </div>
+        </article>
+
+        <article class="card product-card">
+          <div class="product-img">
+            <!-- <img src="TU_FOTO_PULSERA.jpg" alt="Pulsera Cubana ROKKA" /> -->
+            📸 Pulsera Cubana
+          </div>
+          <div class="product-body">
+            <span class="pill">💎 Premium</span>
+            <h3>Pulsera Cubana Oro Laminado</h3>
+            <p>Diseño fuerte y elegante. Fácil de combinar con cualquier look.</p>
+            <div class="price"><strong>$99.900</strong><span>$199.000</span></div>
+            <a class="btn btn-whatsapp" data-whatsapp data-product="Pulsera Cubana" href="#" style="width:100%;">📲 Ordenar pulsera</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESEÑAS -->
+  <section class="dark-band">
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Clientes que ya eligieron brillar</h2>
+        <p>Más de 100 reseñas verificadas. La calidad habla sola.</p>
+      </div>
+
+      <div class="review-grid">
+        <div class="card review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Me sorprendió la calidad. Se ve como oro real y llegó rápido. La cadena tiene muy buen brillo."</p>
+          <div class="review-name">— Miguel R.</div>
+        </div>
+        <div class="card review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Superó mis expectativas. El brillo es increíble y el envío muy rápido. Definitivamente compro de nuevo."</p>
+          <div class="review-name">— Laura S.</div>
+        </div>
+        <div class="card review-card">
+          <div class="stars">★★★★★</div>
+          <p>"La compré para regalo y se ve demasiado elegante. El dije herradura le da un toque único. La gente preguntó dónde la compré."</p>
+          <div class="review-name">— Felipe M.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section>
+    <div class="wrap">
+      <div class="section-title">
+        <h2>Preguntas frecuentes</h2>
+      </div>
+
+      <div class="faq">
+        <details open>
+          <summary>¿Es igual al oro real?</summary>
+          <p>Es oro laminado 18K: una alternativa premium con apariencia elegante tipo oro real. Misma presencia visual a un precio mucho más accesible.</p>
+        </details>
+        <details>
+          <summary>¿Se pone negro o se pela?</summary>
+          <p>No. ROKKA usa blindaje de alta durabilidad. Con cuidados básicos (evitar químicos, guardar seca) mantiene su brillo por mucho tiempo.</p>
+        </details>
+        <details>
+          <summary>¿Puedo pagar cuando llegue?</summary>
+          <p>Sí. Confirmamos tu pedido por WhatsApp y pagas al domiciliario cuando recibes en tu puerta. Sin riesgo para ti.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto tarda el envío?</summary>
+          <p>Entre 2 y 5 días hábiles según tu ciudad. Una vez confirmes por WhatsApp te indicamos el tiempo exacto y los datos del envío.</p>
+        </details>
+        <details>
+          <summary>¿Resiste el agua y el sudor?</summary>
+          <p>Sí. Está diseñada para uso diario. No mancha, no oxida y resiste contacto con agua y sudor.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA FINAL -->
+  <section class="final-cta">
+    <div class="wrap">
+      <div class="final-box">
+        <div class="eyebrow">🔥 Oferta de lanzamiento activa</div>
+        <h2 style="font-family: Georgia, 'Times New Roman', serif; font-size: clamp(32px, 5vw, 56px); line-height:1; margin-bottom:14px;">Es tu momento de destacar</h2>
+        <p style="color: var(--cream); max-width: 680px; margin: 0 auto 24px; font-size: 18px;">No sigas usando lo mismo de siempre. Haz tu pedido ahora y recibe atención directa por WhatsApp — pagas solo cuando llegue a tu puerta.</p>
+        <div class="cta-row" style="justify-content:center;">
+          <a class="btn btn-whatsapp" data-whatsapp href="#">📲 Ordenar por WhatsApp</a>
+          <a class="btn btn-gold" data-shopify href="#">Ver tienda completa</a>
+        </div>
+        <p class="trust-line" style="margin-top:18px;">🚚 Envío gratis · 💰 Pago contraentrega · 🛡️ Compra 100% segura</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- STICKY CTA MÓVIL -->
+  <div class="sticky-cta">
+    <a class="btn btn-whatsapp" data-whatsapp href="#">📲 WhatsApp</a>
+    <a class="btn btn-gold" data-shopify href="#">Ver tienda</a>
+  </div>
+
+  <footer>
+    <strong>ROKKA JOYERÍA</strong><br>
+    Oro laminado premium · Colombia · WhatsApp: 322 948 4031<br><br>
+    <a href="https://rokkajoyeria.com" style="color: var(--gold-light);">rokkajoyeria.com</a>
+  </footer>
+</body>
+</html>
