@@ -48,23 +48,11 @@
 
     .logo-bar { padding: 16px 20px; text-align: center; font-family: Georgia, serif; font-size: 26px; letter-spacing: 6px; color: var(--gold-light); font-weight: 700; }
 
-    /* HERO - IMAGEN PRIMERO EN MÓVIL */
-    .hero-img {
-      width: 100%;
-      aspect-ratio: 4/5;
-      object-fit: cover;
-      object-position: center 60%;
-      display: block;
-    }
-
+    .hero-img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center 60%; display: block; }
     .hero-copy { padding: 24px 20px 32px; background: linear-gradient(180deg, #0d0900, #050300); }
-
     .eyebrow { color: var(--gold-light); font-weight: 800; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
-
     h1 { font-family: Georgia, serif; font-size: clamp(34px, 8vw, 56px); line-height: 1; letter-spacing: -1px; margin-bottom: 14px; }
-
     .gold-text { background: linear-gradient(90deg, #fff6dc, #d6a84f, #fff1c6); -webkit-background-clip: text; background-clip: text; color: transparent; }
-
     .hero-sub { color: var(--cream); font-size: 17px; margin-bottom: 20px; }
 
     .checks { display: grid; gap: 8px; margin-bottom: 24px; }
@@ -72,9 +60,9 @@
     .check-icon { width: 22px; height: 22px; border-radius: 50%; background: rgba(214,168,79,.2); border: 1px solid var(--border); color: var(--gold-light); display: grid; place-items: center; font-size: 12px; font-weight: 900; flex: 0 0 auto; }
 
     .btn-wa { display: flex; justify-content: center; align-items: center; gap: 8px; min-height: 56px; padding: 14px 20px; border-radius: 999px; font-weight: 900; font-size: 17px; background: var(--green); color: #04130a; box-shadow: 0 12px 30px rgba(37,211,102,.25); width: 100%; border: 0; cursor: pointer; text-decoration: none; }
-
     .microtrust { font-size: 12px; color: #999; text-align: center; margin-top: 10px; }
-    .gold-badge { color: var(--gold-light); font-weight: 700; font-size: 13px; text-align: center; margin-top: 8px; }
+
+    .hero-urgency { background: rgba(255,60,0,.1); border: 1px solid rgba(255,100,0,.3); border-radius: 10px; padding: 10px 14px; margin-top: 14px; text-align: center; font-size: 13px; font-weight: 800; color: #ffaa66; }
 
     .trust-bar { background: #111; border-top: 1px solid rgba(255,255,255,.07); border-bottom: 1px solid rgba(255,255,255,.07); padding: 12px 16px; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; font-size: 13px; font-weight: 700; color: var(--cream); }
 
@@ -84,22 +72,24 @@
     .urgency-box p { color: #ccc; font-size: 15px; }
 
     .products { display: grid; gap: 20px; padding: 32px 20px; }
-
     .product-card { background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border: 1px solid rgba(255,255,255,.09); border-radius: var(--radius); overflow: hidden; }
     .product-card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-bottom: 1px solid rgba(255,255,255,.07); }
     .product-body { padding: 18px; }
     .pill { display: inline-flex; border: 1px solid var(--border); border-radius: 999px; padding: 5px 10px; color: var(--gold-light); font-size: 11px; font-weight: 800; margin-bottom: 8px; }
     .product-body h3 { font-size: 18px; color: var(--cream); margin-bottom: 4px; }
-    .product-body p { color: #aaa; font-size: 14px; margin-bottom: 12px; }
-    .price { display: flex; align-items: baseline; gap: 10px; margin-bottom: 14px; }
+    .product-body p { color: #aaa; font-size: 14px; margin-bottom: 8px; }
+    .price { display: flex; align-items: baseline; gap: 10px; margin-bottom: 6px; }
     .price strong { color: var(--gold-light); font-size: 24px; }
     .price s { color: #666; font-size: 14px; }
+    .product-pressure { font-size: 12px; font-weight: 800; color: #ff8844; margin-bottom: 12px; }
     .btn-product { background: var(--green); color: #04130a; font-weight: 900; font-size: 15px; padding: 14px; border-radius: 999px; text-align: center; display: block; width: 100%; }
 
     .section { padding: 48px 20px; }
     .section-dark { background: #0b0b0b; }
     h2 { font-family: Georgia, serif; font-size: clamp(26px, 6vw, 42px); line-height: 1.1; margin-bottom: 10px; }
     .sub { color: #aaa; font-size: 15px; margin-bottom: 24px; }
+
+    .social-badge { background: rgba(214,168,79,.1); border: 1px solid rgba(214,168,79,.3); border-radius: 10px; padding: 10px 16px; text-align: center; font-size: 14px; font-weight: 800; color: var(--gold-light); margin-bottom: 20px; }
 
     .reviews-img { width: 100%; max-width: 500px; margin: 0 auto; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,.5); display: block; }
 
@@ -114,9 +104,11 @@
     details p { color: #aaa; font-size: 14px; margin-top: 10px; }
 
     .final { padding: 56px 20px 80px; text-align: center; background: #0a0a0a; }
+    .final-text { color: var(--cream); max-width: 500px; margin: 12px auto 28px; font-size: 17px; line-height: 1.8; }
 
-    .sticky { position: fixed; z-index: 90; left: 12px; right: 12px; bottom: 12px; display: none; gap: 10px; background: rgba(0,0,0,.8); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,.12); border-radius: 999px; padding: 8px; }
-    .sticky a { flex: 1; min-height: 46px; border-radius: 999px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 14px; }
+    /* STICKY — SOLO WHATSAPP */
+    .sticky { position: fixed; z-index: 90; left: 12px; right: 12px; bottom: 12px; display: none; background: rgba(0,0,0,.8); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,.12); border-radius: 999px; padding: 8px; }
+    .sticky a { width: 100%; min-height: 46px; border-radius: 999px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 15px; background: var(--green); color: #04130a; }
 
     footer { color: #666; font-size: 12px; text-align: center; padding: 24px 16px 110px; border-top: 1px solid rgba(255,255,255,.06); }
 
@@ -158,19 +150,19 @@
       <h1>Brilla como <span class="gold-text">oro real</span> sin pagar precios absurdos</h1>
       <p class="hero-sub">Cadenas y pulseras en oro laminado 18K — brillo intenso, resistente al agua, envío gratis.</p>
       <div class="checks">
-        <div class="check-item"><span class="check-icon">✓</span> No se pone negro. Resiste agua y uso diario.</div>
+        <div class="check-item"><span class="check-icon">✓</span> No se pone negro ni pierde brillo con uso diario.</div>
         <div class="check-item"><span class="check-icon">✓</span> Acabado idéntico al oro 18K</div>
         <div class="check-item"><span class="check-icon">✓</span> Pagas cuando recibes en tu puerta</div>
       </div>
       <a class="btn-wa" data-wa href="#">📲 ORDENAR AHORA – PAGO AL RECIBIR</a>
       <p class="microtrust">✔ Pagas cuando recibes · ✔ Confirmamos por WhatsApp · ✔ Sin riesgo</p>
-      <p class="gold-badge">🏆 Más de 500 pedidos entregados en Colombia</p>
+      <div class="hero-urgency">⚠️ Más de 30 pedidos esta semana · Quedan pocas unidades disponibles</div>
     </div>
   </div>
 
   <div class="trust-bar">
-    <span>✔ +500 clientes</span>
-    <span>✔ Envío gratis Colombia</span>
+    <span>✔ Cada pieza sale directo desde nuestra joyería en Colombia 🇨🇴</span>
+    <span>✔ Envío gratis</span>
     <span>✔ Pagas al recibir</span>
     <span>✔ WhatsApp directo</span>
   </div>
@@ -189,6 +181,7 @@
         <h3>Cadena Cubana + Dije Corona</h3>
         <p>Oro laminado 18K. Brillo intenso, resistente al agua.</p>
         <div class="price"><strong>$149.900</strong><s>Antes $199.900</s></div>
+        <p class="product-pressure">🔥 Más pedida esta semana · ⚠️ Últimas unidades</p>
         <a class="btn-product" data-wa href="#">LO QUIERO – PAGO CONTRAENTREGA</a>
         <p class="microtrust" style="margin-top:8px;">✔ Pagas al recibir · ✔ Sin riesgo</p>
       </div>
@@ -200,6 +193,7 @@
         <h3>Combo Cadena + Pulsera</h3>
         <p>El look completo en oro laminado premium.</p>
         <div class="price"><strong>$169.900</strong><s>Antes $249.900</s></div>
+        <p class="product-pressure">🔥 Más pedido esta semana · ⚠️ Últimas unidades</p>
         <a class="btn-product" data-wa href="#">LO QUIERO – PAGO CONTRAENTREGA</a>
         <p class="microtrust" style="margin-top:8px;">✔ Pagas al recibir · ✔ Sin riesgo</p>
       </div>
@@ -211,6 +205,7 @@
         <h3>Pulsera Cubana Oro Laminado</h3>
         <p>Diseño fuerte y elegante para cualquier look.</p>
         <div class="price"><strong>$99.900</strong><s>Antes $149.900</s></div>
+        <p class="product-pressure">🔥 Más pedida esta semana · ⚠️ Últimas unidades</p>
         <a class="btn-product" data-wa href="#">LO QUIERO – PAGO CONTRAENTREGA</a>
         <p class="microtrust" style="margin-top:8px;">✔ Pagas al recibir · ✔ Sin riesgo</p>
       </div>
@@ -219,6 +214,7 @@
 
   <div class="section section-dark" style="text-align:center;">
     <h2>Lo que dicen nuestros clientes 🇨🇴</h2>
+    <div class="social-badge">Cada pieza sale directo desde nuestra joyería en Colombia 🇨🇴</div>
     <p class="sub">Conversaciones reales por WhatsApp — sin filtros</p>
     <img class="reviews-img" src="whatsapp-reviews.png" alt="Testimonios reales ROKKA" />
   </div>
@@ -227,9 +223,9 @@
     <div style="max-width:800px; margin:0 auto;">
       <h2 style="text-align:center; margin-bottom:20px;">Sabemos lo que estás pensando…</h2>
       <div class="objections">
-        <div class="objection-card"><h3>❌ "Seguro se pone negro"</h3><p>ROKKA usa blindaje de alta durabilidad. Con cuidados básicos mantiene su brillo mucho más que el promedio del mercado.</p></div>
-        <div class="objection-card"><h3>❌ "Se va a ver barato"</h3><p>El acabado premium hace que la pieza se vea elegante desde el primer uso. La gente te pregunta dónde la compraste.</p></div>
-        <div class="objection-card"><h3>❌ "¿Y si no llega?"</h3><p>Confirmamos por WhatsApp y pagas solo cuando el domiciliario toca tu puerta. Cero riesgo.</p></div>
+        <div class="objection-card"><h3>❌ "Seguro se pone negro"</h3><p>No. ROKKA usa blindaje de alta durabilidad. No pierde el brillo con uso diario, agua ni sudor. Garantizado.</p></div>
+        <div class="objection-card"><h3>❌ "Se va a ver barato"</h3><p>Todo lo contrario. El acabado premium hace que la pieza se vea elegante desde el primer uso. La gente te pregunta dónde la compraste — en serio.</p></div>
+        <div class="objection-card"><h3>❌ "¿Y si no llega?"</h3><p>Confirmamos por WhatsApp antes del envío y pagas solo cuando el domiciliario toca tu puerta. Cero riesgo, cero adelantos.</p></div>
       </div>
     </div>
   </div>
@@ -247,15 +243,19 @@
   </div>
 
   <div class="final">
-    <h2>Última oportunidad</h2>
-    <p style="color:var(--cream); max-width:500px; margin:12px auto 24px; font-size:17px;">Si estás viendo esto, aún hay unidades. Cuando se agoten no garantizamos este precio.</p>
-    <a class="btn-wa" data-wa href="#" style="max-width:400px; margin:0 auto;">ORDENAR AHORA – PAGO AL RECIBIR</a>
+    <h2>Si llegaste hasta aquí, es porque te gustó.</h2>
+    <p class="final-text">
+      La mayoría de personas que ven esto terminan pidiendo hoy.<br><br>
+      Cuando se agoten, no volvemos a este precio.<br><br>
+      <strong style="color:var(--gold-light);">👇 Ordénala ahora sin riesgo — pagas cuando la recibes.</strong>
+    </p>
+    <a class="btn-wa" data-wa href="#" style="max-width:400px; margin:0 auto;">📲 ORDENAR AHORA – PAGO AL RECIBIR</a>
     <p class="microtrust" style="margin-top:12px;">✔ Pagas cuando recibes · ✔ WhatsApp directo · ✔ Sin riesgo</p>
   </div>
 
+  <!-- STICKY — SOLO WHATSAPP, sin "Ver tienda" -->
   <div class="sticky">
-    <a style="background:var(--green); color:#04130a;" data-wa href="#">📲 WhatsApp</a>
-    <a style="background:rgba(255,255,255,.1); color:#fff; border:1px solid rgba(255,255,255,.2);" href="https://rokkajoyeria.com">Ver tienda</a>
+    <a data-wa href="#">📲 ORDENAR AHORA – PAGO AL RECIBIR</a>
   </div>
 
   <footer>
