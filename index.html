@@ -51,9 +51,9 @@
     .hero-img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center 60%; display: block; }
     .hero-copy { padding: 24px 20px 32px; background: linear-gradient(180deg, #0d0900, #050300); }
     .eyebrow { color: var(--gold-light); font-weight: 800; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
-    h1 { font-family: Georgia, serif; font-size: clamp(34px, 8vw, 56px); line-height: 1; letter-spacing: -1px; margin-bottom: 14px; }
+    h1 { font-family: Georgia, serif; font-size: clamp(30px, 7vw, 52px); line-height: 1.1; letter-spacing: -1px; margin-bottom: 14px; }
     .gold-text { background: linear-gradient(90deg, #fff6dc, #d6a84f, #fff1c6); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .hero-sub { color: var(--cream); font-size: 17px; margin-bottom: 20px; }
+    .hero-sub { color: var(--cream); font-size: 16px; margin-bottom: 20px; line-height: 1.6; }
 
     .checks { display: grid; gap: 8px; margin-bottom: 24px; }
     .check-item { display: flex; align-items: center; gap: 10px; font-size: 15px; color: #f3ead8; }
@@ -61,7 +61,6 @@
 
     .btn-wa { display: flex; justify-content: center; align-items: center; gap: 8px; min-height: 56px; padding: 14px 20px; border-radius: 999px; font-weight: 900; font-size: 17px; background: var(--green); color: #04130a; box-shadow: 0 12px 30px rgba(37,211,102,.25); width: 100%; border: 0; cursor: pointer; text-decoration: none; }
     .microtrust { font-size: 12px; color: #999; text-align: center; margin-top: 10px; }
-
     .hero-urgency { background: rgba(255,60,0,.1); border: 1px solid rgba(255,100,0,.3); border-radius: 10px; padding: 10px 14px; margin-top: 14px; text-align: center; font-size: 13px; font-weight: 800; color: #ffaa66; }
 
     .trust-bar { background: #111; border-top: 1px solid rgba(255,255,255,.07); border-bottom: 1px solid rgba(255,255,255,.07); padding: 12px 16px; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; font-size: 13px; font-weight: 700; color: var(--cream); }
@@ -70,6 +69,14 @@
     .urgency-box { padding: 28px 20px; text-align: center; background: #050200; }
     .urgency-box h3 { color: #ffcc66; font-size: 20px; margin-bottom: 8px; }
     .urgency-box p { color: #ccc; font-size: 15px; }
+
+    /* GARANTÍA BLINDADA — NUEVA SECCIÓN */
+    .garantia-blindada { background: linear-gradient(180deg, #0a0800, #111); border-top: 2px solid var(--gold); border-bottom: 2px solid var(--gold); padding: 36px 20px; text-align: center; }
+    .garantia-blindada h2 { font-family: Georgia, serif; font-size: clamp(22px, 5vw, 34px); color: var(--gold-light); margin-bottom: 12px; }
+    .garantia-blindada p { color: var(--cream); font-size: 15px; max-width: 600px; margin: 0 auto 20px; line-height: 1.7; }
+    .garantia-items { display: grid; gap: 12px; max-width: 500px; margin: 0 auto; text-align: left; }
+    .garantia-item { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: #f3ead8; }
+    .garantia-item span { color: var(--gold-light); font-size: 18px; flex-shrink: 0; }
 
     .products { display: grid; gap: 20px; padding: 32px 20px; }
     .product-card { background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border: 1px solid rgba(255,255,255,.09); border-radius: var(--radius); overflow: hidden; }
@@ -82,6 +89,7 @@
     .price strong { color: var(--gold-light); font-size: 24px; }
     .price s { color: #666; font-size: 14px; }
     .product-pressure { font-size: 12px; font-weight: 800; color: #ff8844; margin-bottom: 12px; }
+    .product-saving { font-size: 12px; font-weight: 800; color: #27ae60; margin-bottom: 12px; }
     .btn-product { background: var(--green); color: #04130a; font-weight: 900; font-size: 15px; padding: 14px; border-radius: 999px; text-align: center; display: block; width: 100%; }
 
     .section { padding: 48px 20px; }
@@ -90,7 +98,6 @@
     .sub { color: #aaa; font-size: 15px; margin-bottom: 24px; }
 
     .social-badge { background: rgba(214,168,79,.1); border: 1px solid rgba(214,168,79,.3); border-radius: 10px; padding: 10px 16px; text-align: center; font-size: 14px; font-weight: 800; color: var(--gold-light); margin-bottom: 20px; }
-
     .reviews-img { width: 100%; max-width: 500px; margin: 0 auto; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,.5); display: block; }
 
     .objections { display: grid; gap: 14px; }
@@ -101,12 +108,11 @@
     .faq-list { display: grid; gap: 10px; }
     details { background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding: 16px 18px; }
     summary { cursor: pointer; font-weight: 900; color: var(--cream); font-size: 16px; }
-    details p { color: #aaa; font-size: 14px; margin-top: 10px; }
+    details p { color: #aaa; font-size: 14px; margin-top: 10px; line-height: 1.6; }
 
     .final { padding: 56px 20px 80px; text-align: center; background: #0a0a0a; }
     .final-text { color: var(--cream); max-width: 500px; margin: 12px auto 28px; font-size: 17px; line-height: 1.8; }
 
-    /* STICKY — SOLO WHATSAPP */
     .sticky { position: fixed; z-index: 90; left: 12px; right: 12px; bottom: 12px; display: none; background: rgba(0,0,0,.8); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,.12); border-radius: 999px; padding: 8px; }
     .sticky a { width: 100%; min-height: 46px; border-radius: 999px; display: flex; align-items: center; justify-content: center; font-weight: 900; font-size: 15px; background: var(--green); color: #04130a; }
 
@@ -117,6 +123,7 @@
       .hero-img { aspect-ratio: 3/4; border-radius: 0 24px 24px 0; }
       .hero-copy { padding: 40px; }
       .products { grid-template-columns: repeat(3, 1fr); max-width: 1120px; margin: 0 auto; }
+      .garantia-items { grid-template-columns: 1fr 1fr; }
     }
 
     @media (max-width: 679px) {
@@ -147,14 +154,14 @@
     <img class="hero-img" src="hero.jpg" alt="Cadena Cubana Dije Corona ROKKA" />
     <div class="hero-copy">
       <div class="eyebrow">Joyería premium para uso diario</div>
-      <h1>Brilla como <span class="gold-text">oro real</span> sin pagar precios absurdos</h1>
-      <p class="hero-sub">Cadenas y pulseras en oro laminado 18K — brillo intenso, resistente al agua, envío gratis.</p>
+      <h1>Luce el brillo del <span class="gold-text">oro de 18K</span> sin pagar una fortuna.</h1>
+      <p class="hero-sub">Joyería de Oro Laminado Premium con 3 capas de blindaje. No se pela, no pierde el brillo y resiste el uso diario.</p>
       <div class="checks">
         <div class="check-item"><span class="check-icon">✓</span> No se pone negro ni pierde brillo con uso diario.</div>
-        <div class="check-item"><span class="check-icon">✓</span> Acabado idéntico al oro 18K</div>
+        <div class="check-item"><span class="check-icon">✓</span> Acabado idéntico al oro macizo 18K</div>
         <div class="check-item"><span class="check-icon">✓</span> Pagas cuando recibes en tu puerta</div>
       </div>
-      <a class="btn-wa" data-wa href="#">📲 ORDENAR AHORA – PAGO AL RECIBIR</a>
+      <a class="btn-wa" data-wa href="#">🛒 PEDIR AHORA — PAGO AL RECIBIR</a>
       <p class="microtrust">✔ Pagas cuando recibes · ✔ Confirmamos por WhatsApp · ✔ Sin riesgo</p>
       <div class="hero-urgency">⚠️ Más de 30 pedidos esta semana · Quedan pocas unidades disponibles</div>
     </div>
@@ -164,7 +171,7 @@
     <span>✔ Cada pieza sale directo desde nuestra joyería en Colombia 🇨🇴</span>
     <span>✔ Envío gratis</span>
     <span>✔ Pagas al recibir</span>
-    <span>✔ WhatsApp directo</span>
+    <span>✔ Garantía 12 meses</span>
   </div>
 
   <div class="urgency-bar">🔥 SOLO HOY: ENVÍO GRATIS + PAGO CONTRAENTREGA</div>
@@ -173,29 +180,41 @@
     <p>Quedan pocas unidades con precio de lanzamiento. El precio puede subir en cualquier momento.</p>
   </div>
 
+  <!-- GARANTÍA BLINDADA — NUEVA SECCIÓN -->
+  <div class="garantia-blindada">
+    <h2>🛡️ Tu Inversión está Protegida por 12 Meses</h2>
+    <p>En ROKKA no solo vendemos joyas, vendemos calidad garantizada. Si tu pieza pierde su color o brillo original en el primer año, te la cambiamos por una nueva sin preguntas.</p>
+    <div class="garantia-items">
+      <div class="garantia-item"><span>✅</span> Certificado de garantía incluido en cada pedido.</div>
+      <div class="garantia-item"><span>✅</span> Resiste piscina, mar y sudor.</div>
+      <div class="garantia-item"><span>✅</span> Acabado idéntico al oro macizo.</div>
+      <div class="garantia-item"><span>✅</span> Cambio sin preguntas si algo falla.</div>
+    </div>
+  </div>
+
   <div class="products" id="productos">
     <div class="product-card">
       <img src="producto1.jpg" alt="Cadena Cubana + Dije Corona ROKKA" />
       <div class="product-body">
         <span class="pill">⭐ Más vendida</span>
         <h3>Cadena Cubana + Dije Corona</h3>
-        <p>Oro laminado 18K. Brillo intenso, resistente al agua.</p>
+        <p>Oro laminado 18K. 3 capas de blindaje. Resiste agua, sudor y uso diario.</p>
         <div class="price"><strong>$149.900</strong><s>Antes $199.900</s></div>
         <p class="product-pressure">🔥 Más pedida esta semana · ⚠️ Últimas unidades</p>
-        <a class="btn-product" data-wa href="#">LO QUIERO – PAGO CONTRAENTREGA</a>
-        <p class="microtrust" style="margin-top:8px;">✔ Pagas al recibir · ✔ Sin riesgo</p>
+        <a class="btn-product" data-wa href="#">🛒 LO QUIERO — PAGO AL RECIBIR</a>
+        <p class="microtrust" style="margin-top:8px;">✔ Pagas al recibir · ✔ Garantía 12 meses</p>
       </div>
     </div>
     <div class="product-card">
       <img src="producto2.jpg" alt="Combo Cadena + Pulsera ROKKA" />
       <div class="product-body">
-        <span class="pill">🔥 Mejor valor</span>
-        <h3>Combo Cadena + Pulsera</h3>
-        <p>El look completo en oro laminado premium.</p>
+        <span class="pill">🔥 Oferta de lanzamiento</span>
+        <h3>Combo ROKKA Premium — Cadena + Pulsera</h3>
+        <p>El look completo en oro laminado premium. Ahorras $80.000 hoy.</p>
         <div class="price"><strong>$169.900</strong><s>Antes $249.900</s></div>
-        <p class="product-pressure">🔥 Más pedido esta semana · ⚠️ Últimas unidades</p>
-        <a class="btn-product" data-wa href="#">LO QUIERO – PAGO CONTRAENTREGA</a>
-        <p class="microtrust" style="margin-top:8px;">✔ Pagas al recibir · ✔ Sin riesgo</p>
+        <p class="product-saving">✔ Ahorras $80.000 hoy + Envío Gratis a toda Colombia</p>
+        <a class="btn-product" data-wa href="#">🚚 QUIERO EL COMBO — PAGO AL RECIBIR</a>
+        <p class="microtrust" style="margin-top:8px;">✔ Pagas al recibir · ✔ Garantía 12 meses</p>
       </div>
     </div>
     <div class="product-card">
@@ -203,11 +222,11 @@
       <div class="product-body">
         <span class="pill">💎 Premium</span>
         <h3>Pulsera Cubana Oro Laminado</h3>
-        <p>Diseño fuerte y elegante para cualquier look.</p>
+        <p>Diseño fuerte y elegante. 3 capas de blindaje premium.</p>
         <div class="price"><strong>$99.900</strong><s>Antes $149.900</s></div>
         <p class="product-pressure">🔥 Más pedida esta semana · ⚠️ Últimas unidades</p>
-        <a class="btn-product" data-wa href="#">LO QUIERO – PAGO CONTRAENTREGA</a>
-        <p class="microtrust" style="margin-top:8px;">✔ Pagas al recibir · ✔ Sin riesgo</p>
+        <a class="btn-product" data-wa href="#">🛒 LO QUIERO — PAGO AL RECIBIR</a>
+        <p class="microtrust" style="margin-top:8px;">✔ Pagas al recibir · ✔ Garantía 12 meses</p>
       </div>
     </div>
   </div>
@@ -223,9 +242,9 @@
     <div style="max-width:800px; margin:0 auto;">
       <h2 style="text-align:center; margin-bottom:20px;">Sabemos lo que estás pensando…</h2>
       <div class="objections">
-        <div class="objection-card"><h3>❌ "Seguro se pone negro"</h3><p>No. ROKKA usa blindaje de alta durabilidad. No pierde el brillo con uso diario, agua ni sudor. Garantizado.</p></div>
-        <div class="objection-card"><h3>❌ "Se va a ver barato"</h3><p>Todo lo contrario. El acabado premium hace que la pieza se vea elegante desde el primer uso. La gente te pregunta dónde la compraste — en serio.</p></div>
-        <div class="objection-card"><h3>❌ "¿Y si no llega?"</h3><p>Confirmamos por WhatsApp antes del envío y pagas solo cuando el domiciliario toca tu puerta. Cero riesgo, cero adelantos.</p></div>
+        <div class="objection-card"><h3>❌ "Seguro se pone negro"</h3><p>No pasará. Nuestro proceso de laminado es de alta densidad con 3 capas de blindaje. Si llegara a tener algún defecto de fábrica, nuestra garantía de 12 meses te cubre totalmente.</p></div>
+        <div class="objection-card"><h3>❌ "Se va a ver barato"</h3><p>Todo lo contrario. El acabado premium es idéntico al oro macizo. La gente te pregunta dónde la compraste — en serio. No lo creerás hasta que la tengas puesta.</p></div>
+        <div class="objection-card"><h3>❌ "¿Y si no llega?"</h3><p>Somos una joyería establecida en Colombia. Confirmamos cada pedido por teléfono y tú solo pagas cuando el domiciliario te entrega el paquete en la puerta de tu casa. Cero riesgo.</p></div>
       </div>
     </div>
   </div>
@@ -234,10 +253,22 @@
     <div style="max-width:800px; margin:0 auto;">
       <h2 style="text-align:center; margin-bottom:20px;">Preguntas frecuentes</h2>
       <div class="faq-list">
-        <details open><summary>¿Es igual al oro real?</summary><p>Es oro laminado 18K: apariencia elegante tipo oro real a un precio mucho más accesible.</p></details>
-        <details><summary>¿Se pone negro o se pela?</summary><p>No. Resiste el uso diario. Evita químicos agresivos y guárdala seca para conservar el brillo.</p></details>
-        <details><summary>¿Puedo pagar cuando llegue?</summary><p>Sí. Pagas al domiciliario cuando recibes en tu puerta. Sin riesgo para ti.</p></details>
-        <details><summary>¿Cuánto tarda el envío?</summary><p>2 a 5 días hábiles. Te avisamos por WhatsApp con el tracking.</p></details>
+        <details open>
+          <summary>¿Es oro real?</summary>
+          <p>Es Oro Laminado de 18K. Tiene una base de metal técnico recubierta con 3 capas gruesas de oro real. Se ve, pesa y brilla igual que el oro macizo, pero a una fracción del precio.</p>
+        </details>
+        <details>
+          <summary>¿Cómo sé que me va a llegar?</summary>
+          <p>Somos una joyería establecida en Colombia. Confirmamos cada pedido por WhatsApp y tú solo pagas cuando el domiciliario te entrega el paquete en la puerta de tu casa. Cero riesgo.</p>
+        </details>
+        <details>
+          <summary>¿Qué pasa si se pone negra?</summary>
+          <p>No pasará. Nuestro proceso de laminado es de alta densidad. Si llegara a tener algún defecto de fábrica, nuestra garantía de 12 meses te cubre totalmente con cambio sin preguntas.</p>
+        </details>
+        <details>
+          <summary>¿Cuánto tarda el envío?</summary>
+          <p>2 a 5 días hábiles a toda Colombia. Te avisamos por WhatsApp con el número de tracking.</p>
+        </details>
       </div>
     </div>
   </div>
@@ -249,13 +280,12 @@
       Cuando se agoten, no volvemos a este precio.<br><br>
       <strong style="color:var(--gold-light);">👇 Ordénala ahora sin riesgo — pagas cuando la recibes.</strong>
     </p>
-    <a class="btn-wa" data-wa href="#" style="max-width:400px; margin:0 auto;">📲 ORDENAR AHORA – PAGO AL RECIBIR</a>
-    <p class="microtrust" style="margin-top:12px;">✔ Pagas cuando recibes · ✔ WhatsApp directo · ✔ Sin riesgo</p>
+    <a class="btn-wa" data-wa href="#" style="max-width:400px; margin:0 auto;">🛒 CONFIRMAR MI PEDIDO — PAGO CONTRAENTREGA</a>
+    <p class="microtrust" style="margin-top:12px;">✔ Pagas cuando recibes · ✔ WhatsApp directo · ✔ Garantía 12 meses</p>
   </div>
 
-  <!-- STICKY — SOLO WHATSAPP, sin "Ver tienda" -->
   <div class="sticky">
-    <a data-wa href="#">📲 ORDENAR AHORA – PAGO AL RECIBIR</a>
+    <a data-wa href="#">🛒 PEDIR AHORA — PAGO AL RECIBIR</a>
   </div>
 
   <footer>
