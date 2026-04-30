@@ -64,6 +64,11 @@
       opacity: 0;
       transition: opacity 0.8s ease-in-out;
     }
+    .hero-slider img.packaging {
+      object-fit: contain;
+      object-position: center center;
+      background: #080500;
+    }
     .hero-slider img.active { opacity: 1; }
     .slider-dots {
       position: absolute;
@@ -204,7 +209,7 @@
     <div class="hero-slider">
       <img src="hero.jpg" class="active" alt="Cadena Cubana Dije Corona ROKKA"/>
       <img src="lifestyle.jpg" alt="ROKKA Joyería lifestyle"/>
-      <img src="packaging.jpg" alt="ROKKA packaging premium"/>
+      <img src="packaging.jpg" class="packaging" alt="ROKKA packaging premium"/>
       <div class="slider-dots">
         <div class="slider-dot active"></div>
         <div class="slider-dot"></div>
