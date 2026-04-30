@@ -48,7 +48,41 @@
 
     .logo-bar { padding: 16px 20px; text-align: center; font-family: Georgia, serif; font-size: 26px; letter-spacing: 6px; color: var(--gold-light); font-weight: 700; }
 
-    .hero-img { width: 100%; aspect-ratio: 4/5; object-fit: cover; object-position: center 60%; display: block; }
+    /* HERO SLIDER */
+    .hero-slider {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 4/5;
+      overflow: hidden;
+    }
+    .hero-slider img {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      object-position: center 60%;
+      opacity: 0;
+      transition: opacity 0.8s ease-in-out;
+    }
+    .hero-slider img.active { opacity: 1; }
+    .slider-dots {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+      z-index: 10;
+    }
+    .slider-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.5);
+      cursor: pointer;
+      transition: background .3s;
+    }
+    .slider-dot.active { background: var(--gold-light); }
+
     .hero-copy { padding: 24px 20px 32px; background: linear-gradient(180deg, #0d0900, #050300); }
     .eyebrow { color: var(--gold-light); font-weight: 800; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; }
     h1 { font-family: Georgia, serif; font-size: clamp(30px, 7vw, 52px); line-height: 1.1; letter-spacing: -1px; margin-bottom: 14px; }
@@ -65,12 +99,12 @@
 
     .trust-bar { background: #111; border-top: 1px solid rgba(255,255,255,.07); border-bottom: 1px solid rgba(255,255,255,.07); padding: 12px 16px; display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; font-size: 13px; font-weight: 700; color: var(--cream); }
 
-    .urgency-bar { background: linear-gradient(90deg,#b8000a,#e00012,#b8000a); text-align: center; padding: 14px 16px; font-weight: 900; font-size: 14px; }
+    /* URGENCY BAR — CLICKEABLE */
+    .urgency-bar { display: block; background: linear-gradient(90deg,#b8000a,#e00012,#b8000a); text-align: center; padding: 14px 16px; font-weight: 900; font-size: 14px; color: #fff; text-decoration: none; cursor: pointer; }
     .urgency-box { padding: 28px 20px; text-align: center; background: #050200; }
     .urgency-box h3 { color: #ffcc66; font-size: 20px; margin-bottom: 8px; }
     .urgency-box p { color: #ccc; font-size: 15px; }
 
-    /* GARANTÍA BLINDADA — NUEVA SECCIÓN */
     .garantia-blindada { background: linear-gradient(180deg, #0a0800, #111); border-top: 2px solid var(--gold); border-bottom: 2px solid var(--gold); padding: 36px 20px; text-align: center; }
     .garantia-blindada h2 { font-family: Georgia, serif; font-size: clamp(22px, 5vw, 34px); color: var(--gold-light); margin-bottom: 12px; }
     .garantia-blindada p { color: var(--cream); font-size: 15px; max-width: 600px; margin: 0 auto 20px; line-height: 1.7; }
@@ -82,7 +116,8 @@
     .product-card { background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02)); border: 1px solid rgba(255,255,255,.09); border-radius: var(--radius); overflow: hidden; }
     .product-card img { width: 100%; aspect-ratio: 1/1; object-fit: cover; border-bottom: 1px solid rgba(255,255,255,.07); }
     .product-body { padding: 18px; }
-    .pill { display: inline-flex; border: 1px solid var(--border); border-radius: 999px; padding: 5px 10px; color: var(--gold-light); font-size: 11px; font-weight: 800; margin-bottom: 8px; }
+    /* PILL — NO CLICKEABLE */
+    .pill { display: inline-flex; border: 1px solid var(--border); border-radius: 999px; padding: 5px 10px; color: var(--gold-light); font-size: 11px; font-weight: 800; margin-bottom: 8px; cursor: default; pointer-events: none; }
     .product-body h3 { font-size: 18px; color: var(--cream); margin-bottom: 4px; }
     .product-body p { color: #aaa; font-size: 14px; margin-bottom: 8px; }
     .price { display: flex; align-items: baseline; gap: 10px; margin-bottom: 6px; }
@@ -120,7 +155,7 @@
 
     @media (min-width: 680px) {
       .hero-section { display: grid; grid-template-columns: 1fr 1fr; align-items: center; max-width: 1120px; margin: 0 auto; }
-      .hero-img { aspect-ratio: 3/4; border-radius: 0 24px 24px 0; }
+      .hero-slider { aspect-ratio: 3/4; border-radius: 0 24px 24px 0; }
       .hero-copy { padding: 40px; }
       .products { grid-template-columns: repeat(3, 1fr); max-width: 1120px; margin: 0 auto; }
       .garantia-items { grid-template-columns: 1fr 1fr; }
@@ -144,6 +179,20 @@
         const s = document.querySelector(".sticky");
         if (s) s.style.display = window.scrollY > 500 ? "flex" : "none";
       });
+
+      // SLIDER
+      const slides = document.querySelectorAll(".hero-slider img");
+      const dots = document.querySelectorAll(".slider-dot");
+      let current = 0;
+      function goTo(n) {
+        slides[current].classList.remove("active");
+        dots[current].classList.remove("active");
+        current = n % slides.length;
+        slides[current].classList.add("active");
+        dots[current].classList.add("active");
+      }
+      dots.forEach((dot, i) => dot.addEventListener("click", () => goTo(i)));
+      setInterval(() => goTo(current + 1), 3000);
     });
   </script>
 
@@ -151,7 +200,18 @@
   <div class="logo-bar">ROKKA</div>
 
   <div class="hero-section">
-    <img class="hero-img" src="hero.jpg" alt="Cadena Cubana Dije Corona ROKKA" />
+    <!-- SLIDER 3 IMÁGENES -->
+    <div class="hero-slider">
+      <img src="hero.jpg" class="active" alt="Cadena Cubana Dije Corona ROKKA"/>
+      <img src="lifestyle.jpg" alt="ROKKA Joyería lifestyle"/>
+      <img src="packaging.jpg" alt="ROKKA packaging premium"/>
+      <div class="slider-dots">
+        <div class="slider-dot active"></div>
+        <div class="slider-dot"></div>
+        <div class="slider-dot"></div>
+      </div>
+    </div>
+
     <div class="hero-copy">
       <div class="eyebrow">Joyería premium para uso diario</div>
       <h1>Luce el brillo del <span class="gold-text">oro de 18K</span> sin pagar una fortuna.</h1>
@@ -174,13 +234,13 @@
     <span>✔ Garantía 12 meses</span>
   </div>
 
-  <div class="urgency-bar">🔥 SOLO HOY: ENVÍO GRATIS + PAGO CONTRAENTREGA</div>
+  <!-- URGENCY BAR — AHORA CLICKEABLE A WHATSAPP -->
+  <a class="urgency-bar" data-wa href="#">🔥 SOLO HOY: ENVÍO GRATIS + PAGO CONTRAENTREGA — PEDIR AHORA</a>
   <div class="urgency-box">
     <h3>⚠️ Alta demanda esta semana</h3>
     <p>Quedan pocas unidades con precio de lanzamiento. El precio puede subir en cualquier momento.</p>
   </div>
 
-  <!-- GARANTÍA BLINDADA — NUEVA SECCIÓN -->
   <div class="garantia-blindada">
     <h2>🛡️ Tu Inversión está Protegida por 12 Meses</h2>
     <p>En ROKKA no solo vendemos joyas, vendemos calidad garantizada. Si tu pieza pierde su color o brillo original en el primer año, te la cambiamos por una nueva sin preguntas.</p>
@@ -194,7 +254,7 @@
 
   <div class="products" id="productos">
     <div class="product-card">
-      <img src="producto1.jpg" alt="Cadena Cubana + Dije Corona ROKKA" />
+      <img src="producto1.jpg" alt="Cadena Cubana + Dije Corona ROKKA" loading="lazy"/>
       <div class="product-body">
         <span class="pill">⭐ Más vendida</span>
         <h3>Cadena Cubana + Dije Corona</h3>
@@ -206,7 +266,7 @@
       </div>
     </div>
     <div class="product-card">
-      <img src="producto2.jpg" alt="Combo Cadena + Pulsera ROKKA" />
+      <img src="producto2.jpg" alt="Combo Cadena + Pulsera ROKKA" loading="lazy"/>
       <div class="product-body">
         <span class="pill">🔥 Oferta de lanzamiento</span>
         <h3>Combo ROKKA Premium — Cadena + Pulsera</h3>
@@ -218,7 +278,7 @@
       </div>
     </div>
     <div class="product-card">
-      <img src="producto3.jpg" alt="Pulsera Cubana ROKKA" />
+      <img src="producto3.jpg" alt="Pulsera Cubana ROKKA" loading="lazy"/>
       <div class="product-body">
         <span class="pill">💎 Premium</span>
         <h3>Pulsera Cubana Oro Laminado</h3>
@@ -235,7 +295,7 @@
     <h2>Lo que dicen nuestros clientes 🇨🇴</h2>
     <div class="social-badge">Cada pieza sale directo desde nuestra joyería en Colombia 🇨🇴</div>
     <p class="sub">Conversaciones reales por WhatsApp — sin filtros</p>
-    <img class="reviews-img" src="whatsapp-reviews.png" alt="Testimonios reales ROKKA" />
+    <img class="reviews-img" src="whatsapp-reviews.png" alt="Testimonios reales ROKKA" loading="lazy"/>
   </div>
 
   <div class="section">
@@ -244,7 +304,7 @@
       <div class="objections">
         <div class="objection-card"><h3>❌ "Seguro se pone negro"</h3><p>No pasará. Nuestro proceso de laminado es de alta densidad con 3 capas de blindaje. Si llegara a tener algún defecto de fábrica, nuestra garantía de 12 meses te cubre totalmente.</p></div>
         <div class="objection-card"><h3>❌ "Se va a ver barato"</h3><p>Todo lo contrario. El acabado premium es idéntico al oro macizo. La gente te pregunta dónde la compraste — en serio. No lo creerás hasta que la tengas puesta.</p></div>
-        <div class="objection-card"><h3>❌ "¿Y si no llega?"</h3><p>Somos una joyería establecida en Colombia. Confirmamos cada pedido por teléfono y tú solo pagas cuando el domiciliario te entrega el paquete en la puerta de tu casa. Cero riesgo.</p></div>
+        <div class="objection-card"><h3>❌ "¿Y si no llega?"</h3><p>Somos una joyería establecida en Colombia. Confirmamos cada pedido por WhatsApp y tú solo pagas cuando el domiciliario te entrega el paquete en la puerta de tu casa. Cero riesgo.</p></div>
       </div>
     </div>
   </div>
